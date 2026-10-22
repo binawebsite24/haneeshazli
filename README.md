@@ -26,6 +26,12 @@ drop them the moment the page loads. **Re-exporting the card from the
 editor overwrites both copies**, so the tags have to be re-applied each
 time.
 
+The same goes for the mobile scroll fix inside the template's `<style>`:
+`html` has a solid `background` (and, under 480px, matches `--card-bg`
+with `overscroll-behavior-y: none`). Without it, iOS paints the bounce
+area and the gap behind the collapsing toolbar white. Re-apply after a
+re-export.
+
 `og.jpg` (1200×630) is the preview image. WhatsApp caches previews per URL
 for about a week — if you replace it, give it a new filename and update
 `og:image`, or the old one keeps showing.
